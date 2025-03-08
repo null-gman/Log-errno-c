@@ -1,2 +1,3 @@
-./mvPath.sh
+mvPath.sh
+errno
 ./errno
