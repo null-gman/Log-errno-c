@@ -96,10 +96,11 @@ int main(int argc , char * argv[])
 
 	for (int i = 1; i < argc ;i++){
 		if(isNum(argv[i]) == 1)	{
-		    int errNum = toNumber(argv[i]);
-			printf("- %s[ %s ] %s%s%s.\n",ANSI_CYAN,argv[i],ANSI_YELLOW, strerror(errNum),ANSI_RESET);
+			int errno_code = toNumber(argv[i]);
+			printf("- %s[ %s ] %s%s%s.\n",ANSI_CYAN,argv[i],ANSI_YELLOW, strerror(errno_code) ,ANSI_RESET);
 		}else{
 			printf("- %s[ %s ] is not errno code%s.\n",ANSI_RED,argv[i],ANSI_RESET);
+			return 1;
 		}
 	}
 
