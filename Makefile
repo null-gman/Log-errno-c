@@ -1,12 +1,22 @@
 bin = errno
 
-all : $(bin)
 
-$(bin) : main.c
-	gcc -o $@ -Wall -Wextra $^
 
-clear :
-	rm $(bin)
+compile: main.c
+	gcc -o $(bin) -Wall -Wextra $^
 
-play :
-	./errno 3
+install: 
+	make compile
+	cp ./$(bin) ~/.local/bin/
+
+uninstall:
+	rm ~/.local/bin/$(bin)
+
+exec: 
+	./$(bin)
+
+clean:
+	rm ./$(bin)
+
+
+
