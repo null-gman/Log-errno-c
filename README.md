@@ -1,5 +1,5 @@
 # Log-errno-c
-a simple CLI tool in C that takes an errno code as a command-line argument and prints its corresponding error description .
+A simple CLI tool in C that takes an errno code as a command-line argument and prints its corresponding error description .
 
 
 # Make Instructions
