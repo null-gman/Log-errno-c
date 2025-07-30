@@ -26,7 +26,7 @@ int main(int argc , char * argv[])
 	//loop of all argv after <binary name>
 	for (int i = 1; i < argc ;i++){	
 		char* errno_code_str = argv[i]; 
-			int errno_code_int = atoi(argv[i]);//if failed will return 0
+		int errno_code_int = atoi(argv[i]); //if failed will return 0
 
 		if(strncmp("0",errno_code_str,2) == 0 || errno_code_int != 0)
 			printf("- %s[ %s ] %s%s%s.\n",
