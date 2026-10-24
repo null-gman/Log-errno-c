@@ -5,12 +5,12 @@ bin = errno
 compile: main.c
 	gcc -o $(bin) -Wall -Wextra $^
 
-install: 
+install:	
 	make compile
-	cp ./$(bin) ~/.local/bin/
+	cp ./$(bin) /usr/bin/
 
 uninstall:
-	rm ~/.local/bin/$(bin)
+	rm /usr/bin/$(bin)
 
 exec: 
 	./$(bin)
