@@ -1,3 +1,4 @@
+# For GNU/Linux Systems
 bin = errno
 
 
