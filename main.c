@@ -24,18 +24,24 @@ int main(int argc , char * argv[])
 	}
 
 	//loop of all argv after <binary name>
-	for (int i = 1; i < argc ;i++){	
-		char* errno_code_str = argv[i]; 
+	for (int i = 1; i < argc ;i++){
+		char* errno_code_str = argv[i];
+		if (strlen(errno_code_str) > 3)
+		    goto notErrno;//to previent integer overflow, and any errno over than 3 decimals are invalid
+
 		int errno_code_int = atoi(argv[i]); //if failed will return 0
 
 		if(strncmp("0",errno_code_str,2) == 0 || errno_code_int != 0)
 			printf("- %s[ %s ] %s%s%s.\n",
 				ANSI_CYAN,argv[i],
-				ANSI_YELLOW,
+				ANSI_GREEN,
 				strerror(errno_code_int),
 				ANSI_RESET);
-		else 
-			printf("- %s[ %s ] is not errno code%s.\n",ANSI_RED,argv[i],ANSI_RESET);
+		else {
+notErrno:
+		    fprintf(stderr,"- %s[ %s ] is not errno code%s.\n",ANSI_GRAY,argv[i],ANSI_RESET);
+			return 1;
+		}
 	}
 
 
