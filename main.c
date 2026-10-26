@@ -41,7 +41,6 @@ int main(int argc , char * argv[])
 		else {
 notErrno:
 		    fprintf(stderr,"- %s[ %s ] is not errno code%s.\n",ANSI_GRAY,argv[i],ANSI_RESET);
-			return 1;
 		}
 	}
 
