@@ -2,10 +2,17 @@
 A simple CLI tool in C that takes an **errno** code as a command-line argument and prints its corresponding error description.
 
 # Make Instructions
+For Linux:
 - `make compile` : will compile
 - `make install` : will `cp` the binary to `/usr/bin`
 - `make uninstall` : remove `/usr/bin/errno`
 - `make clean`: rm `./errno`
+
+      Note: Installing to `/usr/bin` may require root privileges!.
+
+For Windows: 
+- `make compile` : will compile
+- Move the resulting executable to a directory included in your PATH environment variable.
 
 # usage
 1. Run the program in the terminal with **errno** code as  a command-line argument  : `$ errno 1 2 3 4 5 ...`.
